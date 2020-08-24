@@ -1,2 +1,3 @@
+include ':test-utils'
 include ':app'
 rootProject.name = "AndroidTemplate"

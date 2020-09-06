@@ -3,6 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+junitJacoco {
+    jacocoVersion = '0.8.4' // type String
+    includeNoLocationClasses = false // type boolean
+    includeInstrumentationCoverageInMergedReport = false // type boolean
+}
+
 android {
     compileSdkVersion Android.compileSDK
 
@@ -13,6 +19,7 @@ android {
         versionCode Android.versionCode
         versionName Android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -67,4 +74,5 @@ dependencies {
     androidTestImplementation TestLibs.rxIdler
     testImplementation TestLibs.mockito
     androidTestImplementation TestLibs.mockitoAndroid
+    implementation 'com.android.support:multidex:1.0.3'
 }

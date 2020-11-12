@@ -33,6 +33,7 @@ object Versions {
     val MOCKITO = "3.3.1"
     val MOCK_HTTP_SERVER = "2.7.5"
     val RX_IDLER = "0.10.0"
+    val COROUTINES_VER = "1.4.1"
 }
 
 object BuildPlugins {
@@ -72,6 +73,8 @@ object Libs {
     val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.GLIDE_VERSION}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.APP_COMPAT_VERSION}"
     val coreExt = "androidx.core:core-ktx:${Versions.CORE_KTX}"
+    val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES_VER}"
+    val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES_VER}"
 }
 
 object TestLibs {
@@ -89,4 +92,5 @@ object TestLibs {
     val mockitoAndroid = "org.mockito:mockito-android:${Versions.MOCKITO}"
     val mockHttpServer = "com.squareup.okhttp:mockwebserver:${Versions.MOCK_HTTP_SERVER}"
     val rxIdler = "com.squareup.rx.idler:rx2-idler:${Versions.RX_IDLER}"
+    val coroutinesTest =  "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_VER}"
 }

@@ -56,12 +56,14 @@ dependencies {
     kapt Libs.daggerCompiler
     implementation Libs.viewModel
     implementation Libs.liveData
+    implementation Libs.coroutinesAndroid
     //Testing Libs
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.espressoCore
     androidTestImplementation TestLibs.espressoContrib
     implementation TestLibs.espressoIdlingResource
     testImplementation TestLibs.archCoreTesting
+    testImplementation TestLibs.coroutinesTest
     androidTestImplementation TestLibs.testRunner
     androidTestImplementation TestLibs.rules
     androidTestImplementation TestLibs.truth
@@ -75,4 +77,5 @@ dependencies {
     testImplementation TestLibs.mockito
     androidTestImplementation TestLibs.mockitoAndroid
     implementation 'com.android.support:multidex:1.0.3'
+    implementation(project(":test-utils"))
 }

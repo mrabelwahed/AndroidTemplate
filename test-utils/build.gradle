@@ -24,12 +24,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    //implementation Libs.kotlinStdLib
-    //implementation Libs.coreExt
-    //implementation Libs.appCompat
     implementation TestLibs.junit
     implementation TestLibs.mockito
+    implementation  TestLibs.coroutinesTest
     implementation Libs.rxVersion
     implementation Libs.rxAndroid
+
 
 }

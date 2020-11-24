@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 junitJacoco {
     jacocoVersion = '0.8.4' // type String
@@ -28,10 +29,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 
     compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -47,32 +52,29 @@ dependencies {
     implementation Libs.constraintLayout
     implementation Libs.rxVersion
     implementation Libs.rxAndroid
-    implementation Libs.rxAdapter
-    implementation Libs.retrofit
     implementation Libs.gson
-    implementation Libs.gsonConverter
-    implementation Libs.loggingInterceptor
-    implementation Libs.dagger
-    kapt Libs.daggerCompiler
     implementation Libs.viewModel
     implementation Libs.liveData
+    implementation Libs.multidex
+    implementation Libs.fragmentKtx
+    implementation Libs.hiltAndroid
+    kapt Libs.hiltAndroidCompiler
+    implementation Libs.hiltLifeCycleViewModel
+    kapt Libs.hiltCompiler
+    implementation Libs.room
+    kapt Libs.roomCompiler
+    implementation Libs.rxRoom
+
+
     //Testing Libs
     testImplementation TestLibs.junit
-    androidTestImplementation TestLibs.espressoCore
-    androidTestImplementation TestLibs.espressoContrib
-    implementation TestLibs.espressoIdlingResource
     testImplementation TestLibs.archCoreTesting
     androidTestImplementation TestLibs.testRunner
     androidTestImplementation TestLibs.rules
     androidTestImplementation TestLibs.truth
     androidTestImplementation TestLibs.junitExt
-    androidTestImplementation TestLibs.mockHttpServer
-    testImplementation TestLibs.mockHttpServer
-    kaptTest Libs.dagger
-    testImplementation Libs.dagger
-    kaptAndroidTest Libs.daggerCompiler
-    androidTestImplementation TestLibs.rxIdler
     testImplementation TestLibs.mockito
     androidTestImplementation TestLibs.mockitoAndroid
-    implementation 'com.android.support:multidex:1.0.3'
+
+    testImplementation(project(":test-utils"))
 }

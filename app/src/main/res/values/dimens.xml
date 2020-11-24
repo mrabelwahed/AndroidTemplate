@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="quarter_grid_unit">2dp</dimen>
+    <dimen name="half_grid_unit">4dp</dimen>
+    <dimen name="one_grid_unit">8dp</dimen>
+    <dimen name="one_and_half_grid_unit">12dp</dimen>
+    <dimen name="two_grid_unit">16dp</dimen>
+    <dimen name="three_grid_unit">24dp</dimen>
+    <dimen name="four_grid_unit">32dp</dimen>
+    <dimen name="four_and_half_grid_unit">36dp</dimen>
+    <dimen name="five_grid_unit">40dp</dimen>
+    <dimen name="six_grid_unit">48dp</dimen>
+    <dimen name="seven_grid_unit">30dp</dimen>
+    <dimen name="eight_grid_unit">64dp</dimen>
+    <dimen name="nine_grid_unit">72dp</dimen>
+    <dimen name="ten_grid_unit">80dp</dimen>
+    <dimen name="twenty_grid_unit">160dp</dimen>
+
+    <!--Text sizes -->
+    <dimen name="text_size_caption_material">12sp</dimen>
+    <dimen name="text_size_small_material">14sp</dimen>
+    <dimen name="text_size_subhead_material">16sp</dimen>
+    <dimen name="text_size_medium_material">18sp</dimen>
+    <dimen name="text_size_large_material">22sp</dimen>
+    <dimen name="text_size_headline_material">24sp</dimen>
+    <dimen name="text_size_display_1_material">34sp</dimen>
+    <dimen name="text_size_display_2_material">45sp</dimen>
+    <dimen name="text_size_display_3_material">56sp</dimen>
+    <dimen name="text_size_display_4_material">112sp</dimen>
+</resources>

@@ -9,7 +9,8 @@ buildscript {
     dependencies {
         classpath BuildPlugins.androidGradle
         classpath BuildPlugins.kotlinGradlePlugin
-        classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.16.0'
+        classpath BuildPlugins.jacocoPlugin
+        classpath BuildPlugins.hiltPlugin
     }
 }
 plugins {

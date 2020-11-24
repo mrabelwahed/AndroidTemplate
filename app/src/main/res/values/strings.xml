@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">AndroidTemplate</string>
+    <string name="app_name">Restaurants</string>
+
+    <!-- Search screen -->
+    <string name="menu_favorites">Favorites</string>
+
+    <!-- Favorites screen -->
+    <string name="favorites_title">Favorites</string>
+    <string name="favorites_empty_place_holder">There are no favorite!</string>
+
+    <!--Errors-->
+    <string name="error_required_field">Field is required!</string>
+    <string name="error_invalid_input">Please enter a valid input!</string>
+    <string name="error_genre_not_found">Sorry, genre not found!</string>
+    <string name="error_no_network">No Network!</string>
+    <string name="error_no_connection_to_server">Sorry, something goes wrong while trying to connect!</string>
+    <string name="error_no_restaurants">No restaurants available!</string>
+    <string name="error_bookmark_failed">Bookmark failed!</string>
+    <string name="action_search">Search</string>
+    <string name="action_filter">Sort</string>
+    <string name="action_sort">Sort</string>
+    <string name="search_hint">Restaurant Name</string>
+    <string name="action_bestMatch">Best match</string>
+    <string name="action_newest">Newest</string>
+    <string name="action_ratingAverage">Rating average</string>
+    <string name="action_distance">Distance</string>
+    <string name="action_popularity">Popularity</string>
+    <string name="action_averageProductPrice">Average Product Price</string>
+    <string name="action_deliveryCosts">Delivery Costs</string>
+    <string name="action_minCost">Min Cost</string>
+    <string name="sort_by">Sort By</string>
+    <string name="empty_space"> </string>
 </resources>

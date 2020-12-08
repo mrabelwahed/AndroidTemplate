@@ -36,18 +36,18 @@ class RestaurantsViewModel @ViewModelInject constructor(
     var dataSet = ArrayList<RestaurantModel>()
 
     fun getRestaurants() {
-        if (_dataState.value !=null) return
+        if (_dataState.value != null) return
 
-            _dataState.value = DataState.Loading
-            compositeDisposable.add(
-                getRestaurantsInteractor.execute(Unit).subscribe(
-                    { res ->
-                        _dataState.value =
-                            DataState.Success(RestaurantModelMapper.mapFromEntityList(res))
-                    },
-                    { error -> _dataState.value = DataState.Error(error as RuntimeException) }
-                )
+        _dataState.value = DataState.Loading
+        compositeDisposable.add(
+            getRestaurantsInteractor.execute(Unit).subscribe(
+                { res ->
+                    _dataState.value =
+                        DataState.Success(RestaurantModelMapper.mapFromEntityList(res))
+                },
+                { error -> _dataState.value = DataState.Error(error as RuntimeException) }
             )
+        )
     }
 
     fun favoriteRestaurant(restaurantModel: RestaurantModel) {

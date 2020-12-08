@@ -48,7 +48,7 @@ class SortingOptionsDelegateTest {
         )
         val list = mutableListOf(rest1, rest2, rest3)
         val bestMatchComparator =
-            SortingOptionsDelegate.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
+            SortingOptionsHandler.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
         list.sortWith(bestMatchComparator)
         assertEquals(list.indexOf(rest2), 0)
         assertEquals(list.indexOf(rest3), 1)
@@ -99,7 +99,7 @@ class SortingOptionsDelegateTest {
         val list = mutableListOf(rest1, rest2, rest3)
 
         val bestMatchComparator =
-            SortingOptionsDelegate.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
+            SortingOptionsHandler.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
 
         list.sortWith(bestMatchComparator)
 
@@ -152,7 +152,7 @@ class SortingOptionsDelegateTest {
 
         val list = mutableListOf(rest1, rest2, rest3)
 
-        val bestMatchComparator = SortingOptionsDelegate.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
+        val bestMatchComparator = SortingOptionsHandler.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
 
         list.sortWith(bestMatchComparator)
 

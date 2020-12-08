@@ -2,7 +2,7 @@ package com.ramadan.takeaway.ui.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.ramadan.takeaway.ui.model.RestaurantModel
-import com.ramadan.takeaway.ui.sort.SortingOptionsDelegate
+import com.ramadan.takeaway.ui.sort.SortingOptionsHandler
 import com.ramadan.takeaway.ui.sort.wraper.SortedListComparatorWrapper
 import com.ramadan.takeaway.util.SortingKeys
 
@@ -12,7 +12,7 @@ class RestaurantSortedListImpl(adapter: RecyclerView.Adapter<*>) : SortedListCom
 ) {
 
     companion object {
-        private val DEFAULT_ORDER = SortingOptionsDelegate.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
+        private val DEFAULT_ORDER = SortingOptionsHandler.buildSortByOptionsComparator(SortingKeys.BEST_MATCH)
     }
 
     override fun areContentsTheSame(oldItem: RestaurantModel, newItem: RestaurantModel): Boolean {

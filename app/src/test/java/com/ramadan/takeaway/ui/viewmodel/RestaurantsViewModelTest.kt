@@ -13,7 +13,6 @@ import com.ramadan.test_utils.RxSchedulerRule
 import com.ramadan.test_utils.mock
 import io.reactivex.Completable
 import io.reactivex.Single
-import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
@@ -117,14 +116,6 @@ class RestaurantsViewModelTest {
         restaurantsViewModel.changeDataStateForRestaurant(data)
         // Then
         verify(favoriteStateObserver).onChanged(DataState.Success(RestaurantModelMapper.mapFromEntity(data)))
-    }
-
-    @Test
-    fun `should filter restaurants based on my keyword`() {
-        val keyword = "Sushi"
-        val result = restaurantsViewModel.filterRestaurantsByKeyword(keyword)
-        assertEquals("the restaurants size has one item only", RestaurantModelMapper.mapFromEntity(givenRestaurant()), result[0])
-        assertEquals("the name of the restaurant is Tanoshii Sushi", "Tanoshii Sushi", result[0].name)
     }
 
     private fun givenData(): List<Restaurant> {

@@ -28,6 +28,13 @@ The goal of this challenge is to implement a sample project, where you can see a
 
     ./gradlew test connectedAndroidTest
 
+ ## Run Ktlint
+
+ 1. to check the formatting. Run the following command in terminal
+     ./gradlew ktlintCheck
+ 2. to format the code. Run the following command in terminal
+    ./gradlew ktlintFormat
+
 ## The App Architecture
 
  1. Clean Architecture based on  the MVVM Architecture pattern with Interactors

@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ramadan.takeaway.R
 import com.ramadan.takeaway.ui.adapter.RestaurantsAdapter
 import com.ramadan.takeaway.ui.model.RestaurantModel
-import com.ramadan.takeaway.ui.sort.SortingOptionsDelegate
+import com.ramadan.takeaway.ui.sort.SortingOptionsHandler
 import com.ramadan.takeaway.ui.viewmodel.RestaurantsViewModel
 import com.ramadan.takeaway.util.DataState
 import com.ramadan.takeaway.util.SortingKeys
@@ -29,7 +29,7 @@ import kotlin.collections.ArrayList
 class MainActivity : AppCompatActivity(), PopupMenu.OnMenuItemClickListener {
     lateinit var adapter: RestaurantsAdapter
     private val restaurantsViewModel: RestaurantsViewModel by viewModels()
-    private  var currentRestaurantModel: RestaurantModel? = null
+    private var currentRestaurantModel: RestaurantModel? = null
     private var currentSortKey: SortingKeys = SortingKeys.BEST_MATCH
     private lateinit var searchView: SearchView
     fun RecyclerView.setup(context: Context) {
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity(), PopupMenu.OnMenuItemClickListener {
             Observer {
                 textViewSelectedSort.text = "SortBy: ${getSortingString(it)}"
                 textViewSelectedSort.setTextColor(resources.getColor(R.color.accentColor))
-                adapter.changeSortType(SortingOptionsDelegate.buildSortByOptionsComparator(it))
+                adapter.changeSortType(SortingOptionsHandler.buildSortByOptionsComparator(it))
             }
         )
 

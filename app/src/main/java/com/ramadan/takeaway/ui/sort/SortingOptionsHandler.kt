@@ -6,7 +6,7 @@ import com.ramadan.takeaway.util.SortingKeys
 import java.util.Locale
 import kotlin.Comparator
 
-object SortingOptionsDelegate {
+object SortingOptionsHandler {
     fun buildSortByOptionsComparator(sortingKey: SortingKeys?): Comparator<RestaurantModel> {
         val byFavorites = compareByDescending<RestaurantModel> { restaurant -> restaurant.isFavorite }
         val byOpeningState: (RestaurantModel) -> OpeningState = { restaurant ->

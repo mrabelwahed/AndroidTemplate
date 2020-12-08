@@ -29,10 +29,9 @@ import kotlin.collections.ArrayList
 class MainActivity : AppCompatActivity(), PopupMenu.OnMenuItemClickListener {
     lateinit var adapter: RestaurantsAdapter
     private val restaurantsViewModel: RestaurantsViewModel by viewModels()
-    private lateinit var currentRestaurantModel: RestaurantModel
+    private  var currentRestaurantModel: RestaurantModel? = null
     private var currentSortKey: SortingKeys = SortingKeys.BEST_MATCH
     private lateinit var searchView: SearchView
-    private var restaurantList = ArrayList<RestaurantModel>()
     fun RecyclerView.setup(context: Context) {
         this.layoutManager = LinearLayoutManager(context)
         this.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
@@ -81,8 +80,8 @@ class MainActivity : AppCompatActivity(), PopupMenu.OnMenuItemClickListener {
                 when (it) {
                     is DataState.Success<List<RestaurantModel>> -> {
                         handleLoading(false)
-                        restaurantList = it.data as ArrayList<RestaurantModel>
-                        adapter.addRestaurants(it.data as ArrayList<RestaurantModel>)
+                        restaurantsViewModel.dataSet = it.data as ArrayList<RestaurantModel>
+                        adapter.addRestaurants(it.data)
                     }
                     is DataState.Error -> {
                         handleLoading(false)
@@ -109,7 +108,7 @@ class MainActivity : AppCompatActivity(), PopupMenu.OnMenuItemClickListener {
             this,
             Observer {
                 if (it is DataState.Success<RestaurantModel>) {
-                    currentRestaurantModel.isFavorite = it.data.isFavorite
+                    currentRestaurantModel?.isFavorite = it.data.isFavorite
                     restaurantsViewModel.setSelectedSortingOption(currentSortKey)
                 }
             }
@@ -144,7 +143,7 @@ class MainActivity : AppCompatActivity(), PopupMenu.OnMenuItemClickListener {
     }
 
     fun filterRestaurantsByKeyword(keyword: String) {
-        val filteredList = restaurantsViewModel.filterRestaurantsByKeyword(restaurantList, keyword)
+        val filteredList = restaurantsViewModel.filterRestaurantsByKeyword(keyword)
         adapter.addRestaurants(filteredList)
     }
 

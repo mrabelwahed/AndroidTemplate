@@ -122,7 +122,7 @@ class RestaurantsViewModelTest {
     @Test
     fun `should filter restaurants based on my keyword`() {
         val keyword = "Sushi"
-        val result = restaurantsViewModel.filterRestaurantsByKeyword(RestaurantModelMapper.mapFromEntityList(givenData()), keyword)
+        val result = restaurantsViewModel.filterRestaurantsByKeyword(keyword)
         assertEquals("the restaurants size has one item only", RestaurantModelMapper.mapFromEntity(givenRestaurant()), result[0])
         assertEquals("the name of the restaurant is Tanoshii Sushi", "Tanoshii Sushi", result[0].name)
     }

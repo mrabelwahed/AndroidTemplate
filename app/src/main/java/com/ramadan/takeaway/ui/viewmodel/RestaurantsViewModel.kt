@@ -33,17 +33,21 @@ class RestaurantsViewModel @ViewModelInject constructor(
     val favoriteState: LiveData<DataState<RestaurantModel>>
         get() = _favoriteState
 
+    var dataSet = ArrayList<RestaurantModel>()
+
     fun getRestaurants() {
-        _dataState.value = DataState.Loading
-        compositeDisposable.add(
-            getRestaurantsInteractor.execute(Unit).subscribe(
-                { res ->
-                    _dataState.value =
-                        DataState.Success(RestaurantModelMapper.mapFromEntityList(res))
-                },
-                { error -> _dataState.value = DataState.Error(error as RuntimeException) }
+        if (_dataState.value !=null) return
+
+            _dataState.value = DataState.Loading
+            compositeDisposable.add(
+                getRestaurantsInteractor.execute(Unit).subscribe(
+                    { res ->
+                        _dataState.value =
+                            DataState.Success(RestaurantModelMapper.mapFromEntityList(res))
+                    },
+                    { error -> _dataState.value = DataState.Error(error as RuntimeException) }
+                )
             )
-        )
     }
 
     fun favoriteRestaurant(restaurantModel: RestaurantModel) {
@@ -65,10 +69,10 @@ class RestaurantsViewModel @ViewModelInject constructor(
                 }
         )
     }
-    fun filterRestaurantsByKeyword(restaurantList: List<RestaurantModel>, keyword: String):
+    fun filterRestaurantsByKeyword(keyword: String):
         List<RestaurantModel> {
             val filteredList = ArrayList<RestaurantModel>()
-            restaurantList.forEach {
+            dataSet.forEach {
                 if (it.name.toLowerCase(Locale.getDefault()).contains(keyword.toLowerCase(Locale.getDefault())))
                     filteredList.add(it)
             }

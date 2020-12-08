@@ -1,10 +1,15 @@
 
 ## Challenge 1
 
-The goal of this challenge is to implement a sample project, where you visualize a restaurant list. You are able to sort the restaurant list based on it’s current openings state, you can favourite a restaurant and you can select a sort value to further sort the list. Finally we would like to see you add the option to filter the restaurant list, based on a restaurant’s name. In the attachments you can find a JSON file (sample.json), this file contains all the necessary data to complete this assignment. Parse the JSON file and use it for the visualization and sorting of the list. Use the following priority of the sorting (from the highest to the lowest priority):
+The goal of this challenge is to implement a sample project, where you can see a restaurant list.
+ You will able to sort the restaurant list based on it’s current openings state, you can favourite a restaurant and
+ you can select a sort value to further sort the list. Finally you would like to see you add the option to filter the restaurant list, based on a restaurant’s name.
+ In the assets you can find a JSON file (data.json), this file contains all the necessary data to complete this challenge. Parse the JSON file and use it for the visualization and sorting of the list.
+ Use the following priority of the sorting (from the highest to the lowest priority):
+
 1. Favourites​: Favourite restaurants are at the top of the list, your current favourite restaurants are stored locally on the phone.
-2. Openings state​: Restaurant is either open (top), you can order ahead (middle) or a restaurant is currently closed (bottom). (Values available in sample.json)
-3. Sort options​: Always one sort option is chosen and this can be best match, newest, rating average, distance, popularity, average product price, delivery costs or the minimum cost. (Values available in sample.json)
+2. Openings state​: Restaurant is either open (top), you can order ahead (middle) or a restaurant is currently closed (bottom). (Values available in data.json)
+3. Sort options​: Always one sort option is chosen and this can be best match, newest, rating average, distance, popularity, average product price, delivery costs or the minimum cost. (Values available in data.json)
 4. Filtering​: It’s up to you how you how you want to search by restaurant name.
 
 

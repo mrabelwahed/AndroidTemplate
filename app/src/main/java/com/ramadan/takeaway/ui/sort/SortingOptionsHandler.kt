@@ -20,10 +20,7 @@ object SortingOptionsHandler {
                 byFavorites
                     .thenBy(byOpeningState)
                     .thenByDescending { restaurant -> restaurant.averageProductPrice }
-            SortingKeys.BEST_MATCH ->
-                byFavorites
-                    .thenBy(byOpeningState)
-                    .thenByDescending { restaurant -> restaurant.bestMatch }
+
             SortingKeys.DISTANCE ->
                 byFavorites
                     .thenBy(byOpeningState)
@@ -49,7 +46,7 @@ object SortingOptionsHandler {
                     .thenBy(byOpeningState)
                     .thenByDescending { restaurant -> restaurant.ratingAverage }
             //  Default.
-            null ->
+            else ->
                 byFavorites
                     .thenBy(byOpeningState)
                     .thenByDescending { restaurant -> restaurant.bestMatch }

@@ -134,10 +134,7 @@ class MainActivity : AppCompatActivity(), PopupMenu.OnMenuItemClickListener {
                 return false
             }
 
-            override fun onQueryTextChange(query: String): Boolean {
-                filterRestaurantsByKeyword(query)
-                return false
-            }
+            override fun onQueryTextChange(query: String) = onQueryTextSubmit(query)
         })
         return true
     }

@@ -12,7 +12,7 @@ class SortingOptionsHandlerTest {
         const val ROYAL_RESTAURANT = "Royal Thai"
     }
     @Test
-    fun testBuildSortByOptionsComparator_SortData_ByBestMatch() {
+    fun `test build sort by options comparator sort data by best match`() {
         val rest1 = RestaurantModel(
             name = SUSHI_RESTAURANT,
             status = "open",
@@ -61,7 +61,7 @@ class SortingOptionsHandlerTest {
     }
 
     @Test
-    fun testBuildSortByOptionsComparator_SortData_ByOpenState() {
+    fun `test build sort by options comparator sort data by open State`() {
 
         val rest1 = RestaurantModel(
             name = SUSHI_RESTAURANT,
@@ -114,7 +114,7 @@ class SortingOptionsHandlerTest {
     }
 
     @Test
-    fun testBuildSortByOptionsComparator_SortData_ByFavorite() {
+    fun `test build sort by options comparator sort data  by favorite`() {
         val rest1 = RestaurantModel(
             name = SUSHI_RESTAURANT,
             status = "closed",

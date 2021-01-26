@@ -5,11 +5,16 @@ import com.ramadan.takeaway.util.SortingKeys
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class SortingOptionsDelegateTest {
+class SortingOptionsHandlerTest {
+    companion object {
+        const val SUSHI_RESTAURANT = "Tanoshii Sushi"
+        const val EXPRESS_RESTAURANT = "Tandoori Express"
+        const val ROYAL_RESTAURANT = "Royal Thai"
+    }
     @Test
     fun testBuildSortByOptionsComparator_SortData_ByBestMatch() {
         val rest1 = RestaurantModel(
-            name = "Tanoshii Sushi",
+            name = SUSHI_RESTAURANT,
             status = "open",
             bestMatch = 3.0,
             newest = 96.0,
@@ -22,7 +27,7 @@ class SortingOptionsDelegateTest {
         )
 
         val rest2 = RestaurantModel(
-            name = "Tandoori Express",
+            name = EXPRESS_RESTAURANT,
             status = "open",
             bestMatch = 40.0,
             newest = 96.0,
@@ -35,7 +40,7 @@ class SortingOptionsDelegateTest {
         )
 
         val rest3 = RestaurantModel(
-            name = "Royal Thai",
+            name = ROYAL_RESTAURANT,
             status = "open",
             bestMatch = 10.0,
             newest = 96.0,
@@ -59,7 +64,7 @@ class SortingOptionsDelegateTest {
     fun testBuildSortByOptionsComparator_SortData_ByOpenState() {
 
         val rest1 = RestaurantModel(
-            name = "Tanoshii Sushi",
+            name = SUSHI_RESTAURANT,
             status = "closed",
             bestMatch = 3.0,
             newest = 96.0,
@@ -72,7 +77,7 @@ class SortingOptionsDelegateTest {
         )
 
         val rest2 = RestaurantModel(
-            name = "Tandoori Express",
+            name = EXPRESS_RESTAURANT,
             status = "order ahead",
             bestMatch = 40.0,
             newest = 96.0,
@@ -85,7 +90,7 @@ class SortingOptionsDelegateTest {
         )
 
         val rest3 = RestaurantModel(
-            name = "Royal Thai",
+            name = ROYAL_RESTAURANT,
             status = "open",
             bestMatch = 10.0,
             newest = 96.0,
@@ -111,7 +116,7 @@ class SortingOptionsDelegateTest {
     @Test
     fun testBuildSortByOptionsComparator_SortData_ByFavorite() {
         val rest1 = RestaurantModel(
-            name = "Tanoshii Sushi",
+            name = SUSHI_RESTAURANT,
             status = "closed",
             bestMatch = 3.0,
             newest = 96.0,
@@ -124,7 +129,7 @@ class SortingOptionsDelegateTest {
         )
 
         val rest2 = RestaurantModel(
-            name = "Tandoori Express",
+            name = EXPRESS_RESTAURANT,
             status = "order ahead",
             bestMatch = 40.0,
             newest = 96.0,
@@ -138,7 +143,7 @@ class SortingOptionsDelegateTest {
         )
 
         val rest3 = RestaurantModel(
-            name = "Royal Thai",
+            name = ROYAL_RESTAURANT,
             status = "open",
             bestMatch = 10.0,
             newest = 96.0,

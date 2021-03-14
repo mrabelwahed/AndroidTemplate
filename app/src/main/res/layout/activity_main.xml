@@ -56,6 +56,5 @@
         android:layout_alignParentRight="true"
         android:layout_margin="16dp"
         android:contentDescription="@string/action_sort"
-        android:onClick="showSortingValues"
         android:src="@drawable/ic_sort" />
 </RelativeLayout>

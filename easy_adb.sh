@@ -138,6 +138,13 @@ while test $# -gt 0; do
              print_blue "==================================================================================================\n"
              exit 0
              ;;
+        uninstall)
+             print_blue "\n ====================================   Uninstalling  :   ===============================\n"
+             adb uninstall  $PACKAGE
+             print_green "uninstall is done \n"
+             print_blue "==================================================================================================\n"
+             exit 0
+             ;;
 
         *)
            print_red "command is not supported \n"

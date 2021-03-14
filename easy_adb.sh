@@ -110,7 +110,34 @@ while test $# -gt 0; do
              exit 0
              ;;
 
+        ip)
+             print_blue "\n ====================================   IP Address Info :   ===============================\n"
+             adb shell ip addr show
+             print_blue "==================================================================================================\n"
+             exit 0
+             ;;
 
+        dumpsys)
+             print_blue "\n ====================================   Dumpsys starting :   ===============================\n"
+             adb shell  dumpsys > ~/Desktop/dumpsys.txt
+             print_green "Dumpsys is generated , check your Desktop \n"
+             print_blue "==================================================================================================\n"
+             exit 0
+             ;;
+
+        dumpsys-less)
+             print_blue "\n ====================================   Dumpsys starting :   ===============================\n"
+             adb shell  dumpsys | less
+             print_blue "==================================================================================================\n"
+             exit 0
+             ;;
+
+         battery)
+             print_blue "\n ====================================   Battery Info :   ===============================\n"
+             adb shell  dumpsys battery
+             print_blue "==================================================================================================\n"
+             exit 0
+             ;;
 
         *)
            print_red "command is not supported \n"

@@ -2,12 +2,7 @@ package com.ramadan.takeaway.data.model
 
 import com.google.gson.annotations.SerializedName
 
-/**
- * Created by Mohammed Fathy.
- * dev.mfathy@gmail.com
- *
- * Remote data layer models.
- */
+
 data class RestaurantsResponse(
     @SerializedName("restaurants")
     val restaurants: List<RestaurantItem>?

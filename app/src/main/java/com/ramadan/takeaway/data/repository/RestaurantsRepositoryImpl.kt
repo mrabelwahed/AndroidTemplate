@@ -18,7 +18,10 @@ class RestaurantsRepositoryImpl(private val context: Context, private val dao: R
     private fun getRestaurantsFromJsonFile(): Single<List<Restaurant>> {
         val response = loadJSONFromAssets(context, "data.json") ?: "{}"
         val gson = Gson()
-        val restaurants = gson.fromJson(response, RestaurantsResponse::class.java).restaurants
+        val restaurants = gson.fromJson(
+            response,
+            RestaurantsResponse::class.java
+        ).restaurants
         return Single.defer {
             Single.just(restaurants?.let { RestaurantMapper.mapFromEntityList(it) })
         }

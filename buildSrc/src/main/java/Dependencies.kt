@@ -25,8 +25,7 @@ object Versions {
     val MOCKITO = "3.3.1"
     val MULTIDEX = "1.0.3"
     val JACOCO = "0.16.0"
-    val HILT = "2.28-alpha"
-    val HILT_VIEWMODEL = "1.0.0-alpha01"
+    val HILT = "2.38.1"
     val FRAGMENT_KTX = "1.2.5"
     val ROOM = "2.2.5"
 }
@@ -63,8 +62,6 @@ object Libs {
     val multidex = "com.android.support:multidex:${Versions.MULTIDEX}"
     val hiltAndroid = "com.google.dagger:hilt-android:${Versions.HILT}"
     val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
-    val hiltLifeCycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_VIEWMODEL}"
-    val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.HILT_VIEWMODEL}"
     val fragmentKtx =  "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}"
     val room = "androidx.room:room-runtime:${Versions.ROOM}"
     val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM}"

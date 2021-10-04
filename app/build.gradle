@@ -59,8 +59,6 @@ dependencies {
     implementation Libs.fragmentKtx
     implementation Libs.hiltAndroid
     kapt Libs.hiltAndroidCompiler
-    implementation Libs.hiltLifeCycleViewModel
-    kapt Libs.hiltCompiler
     implementation Libs.room
     kapt Libs.roomCompiler
     implementation Libs.rxRoom
@@ -77,4 +75,5 @@ dependencies {
     androidTestImplementation TestLibs.mockitoAndroid
 
     testImplementation(project(":test-utils"))
+    testImplementation(project(":theme"))
 }

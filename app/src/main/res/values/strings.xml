@@ -30,4 +30,9 @@
     <string name="action_minCost">Min Cost</string>
     <string name="sort_by">Sort By</string>
     <string name="empty_space"> </string>
+
+    <!-- theme-->
+    <string name="choose_theme">Choose Theme</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

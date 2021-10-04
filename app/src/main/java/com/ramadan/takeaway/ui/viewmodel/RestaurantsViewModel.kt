@@ -1,7 +1,6 @@
 package com.ramadan.takeaway.ui.viewmodel
 
 import androidx.annotation.VisibleForTesting
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,11 +12,14 @@ import com.ramadan.takeaway.ui.mapper.RestaurantModelMapper
 import com.ramadan.takeaway.ui.model.RestaurantModel
 import com.ramadan.takeaway.util.DataState
 import com.ramadan.takeaway.util.SortingKeys
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.disposables.CompositeDisposable
 import java.util.Locale
+import javax.inject.Inject
 import kotlin.collections.ArrayList
 
-class RestaurantsViewModel @ViewModelInject constructor(
+@HiltViewModel
+class RestaurantsViewModel @Inject constructor(
     private val getRestaurantsInteractor: GetRestaurantsInteractor,
     private val favoriteRestaurantInteractor: FavoriteRestaurantInteractor,
     private val unFavoriteRestaurantInteractor: UnFavoriteRestaurantInteractor

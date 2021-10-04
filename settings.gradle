@@ -1,3 +1,4 @@
 include ':test-utils'
 include ':app'
 rootProject.name = "Restaurants"
+include ':theme'

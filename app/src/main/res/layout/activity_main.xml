@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:visibility="visible" />
-
-    <TextView
-        android:id="@+id/textViewSelectedSort"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:textColor="@color/accentColor"
-        android:padding="@dimen/one_grid_unit"
-        />
+    android:layout_height="match_parent"/>
 
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:visibility="visible"
-            android:paddingBottom="50dp"
-            android:clipToPadding="false"
-            android:layout_below="@id/textViewSelectedSort"
-            />
-
-
-    <TextView
-        android:id="@+id/textView_List_callToAction"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_margin="@dimen/seven_grid_unit"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/error_no_restaurants"
-        android:textColor="@color/textColorPrimary"
-        android:visibility="gone"
-        android:textSize="@dimen/text_size_large_material" />
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/sortBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/action_sort"
-        android:src="@drawable/ic_sort" />
-</RelativeLayout>

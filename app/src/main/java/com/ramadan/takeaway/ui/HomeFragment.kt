@@ -12,6 +12,9 @@ import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +26,7 @@ import com.ramadan.takeaway.ui.viewmodel.RestaurantsViewModel
 import com.ramadan.takeaway.util.DataState
 import com.ramadan.takeaway.util.SortingKeys
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 @AndroidEntryPoint
@@ -121,7 +125,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
        activity?.menuInflater?.inflate(R.menu.menu_search, menu)
-
+        super.onCreateOptionsMenu(menu, inflater)
         // Associate searchable configuration with the SearchView
         val searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView = menu.findItem(R.id.action_search).actionView as SearchView
@@ -193,6 +197,15 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
             SortingKeys.MIN_COST -> getString(R.string.action_minCost)
             SortingKeys.RATING_AVERAGE -> getString(R.string.action_ratingAverage)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+           R.id.action_settings ->  {
+             findNavController().navigate(R.id.actionFromHomeToSettings)
+           }
+        }
+        return true
     }
 
 }

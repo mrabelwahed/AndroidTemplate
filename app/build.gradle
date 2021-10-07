@@ -28,6 +28,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug{
+            versionNameSuffix '-debug'
+        }
     }
     
     kotlinOptions {
@@ -62,6 +66,11 @@ dependencies {
     implementation Libs.room
     kapt Libs.roomCompiler
     implementation Libs.rxRoom
+    implementation Libs.navigationKtx
+    implementation Libs.navigationUI
+    implementation project(":settings")
+
+
 
 
     //Testing Libs
@@ -75,5 +84,4 @@ dependencies {
     androidTestImplementation TestLibs.mockitoAndroid
 
     testImplementation(project(":test-utils"))
-    testImplementation(project(":theme"))
 }

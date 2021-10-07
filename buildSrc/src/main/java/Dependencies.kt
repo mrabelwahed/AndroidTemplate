@@ -5,7 +5,7 @@ object Versions {
     val MIN_SDK_VERSION = 16
     val TARGET_SDK_VERSION = 28
     val VERSION_CODE = 1
-    val VERSION_NAME = "1.0"
+    val VERSION_NAME = "1.0.0"
     val RXJAVA_VERSION = "2.2.13"
     val RX_ANDROID = "2.1.1"
     val GSON_VERSION = "2.8.8"
@@ -28,6 +28,7 @@ object Versions {
     val HILT = "2.38.1"
     val FRAGMENT_KTX = "1.2.5"
     val ROOM = "2.2.5"
+    val NAV_Version = "2.3.5"
 }
 
 object BuildPlugins {
@@ -66,6 +67,9 @@ object Libs {
     val room = "androidx.room:room-runtime:${Versions.ROOM}"
     val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM}"
     val rxRoom = "androidx.room:room-rxjava2:${Versions.ROOM}"
+    // Kotlin
+    val navigationKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.NAV_Version}"
+    val navigationUI =  "androidx.navigation:navigation-ui-ktx:${Versions.NAV_Version}"
 }
 
 object TestLibs {

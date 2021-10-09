@@ -39,6 +39,10 @@ The goal of this challenge is to implement a sample project, where you can see a
 
  1. Clean Architecture based on  the MVVM Architecture pattern with Interactors
 
+## The Template Extras
+
+1. The App has two build types debug and release with two different app icons and app names
+
 ## Libs
 
 1. Hilt for dependency Injection

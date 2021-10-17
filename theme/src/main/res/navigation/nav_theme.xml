@@ -3,11 +3,9 @@
              xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_theme"
-    app:startDestination="@id/blankFragment">
-
-    <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.ramadan.theme.ui.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
+    app:startDestination="@id/themeChangeDialog">
+    <dialog
+        android:id="@+id/themeChangeDialog"
+        android:name="com.ramadan.theme.ui.ThemeChangeDialog"
+        android:label="ThemeChangeDialog" />
 </navigation>

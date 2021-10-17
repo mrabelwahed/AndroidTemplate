@@ -23,7 +23,7 @@
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
+        android:textColor="@color/secondaryTextColor"
         android:layout_marginTop="20dp"
         tools:text="version: 1.0.0-debug" />
 

@@ -1,28 +1,35 @@
 package com.ramadan.theme.ui
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.RadioGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.DialogFragment
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.ramadan.theme.R
 
-class ThemeChangeDialog : DialogFragment() {
+class ThemeChangeDialog : DialogFragment(R.layout.dialog_theme) {
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val items =  arrayOf("Light","Dark","Default")
-        return MaterialAlertDialogBuilder(requireContext())
-            .setTitle(R.string.change_app_theme)
-            .setSingleChoiceItems(items,0){
-                _,which->
-                    dismiss()
 
-            }
-            .create()
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ThemeChangeDialog().show(activity?.supportFragmentManager!! ,"sss")
+        val themeChangeCroup = view.findViewById<RadioGroup>(R.id.themeChangeGroup)
+        themeChangeCroup.setOnCheckedChangeListener { _, id ->
+            when (id) {
+                R.id.light -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                R.id.dark -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                R.id.systemDefault -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            }
+            dismiss()
+        }
     }
+
 }

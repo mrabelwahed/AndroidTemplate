@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textColor="@color/accentColor"
+        android:textColor="@color/primaryTextColor"
         android:padding="@dimen/one_grid_unit"
         />
 
@@ -46,7 +46,7 @@
         android:layout_margin="@dimen/seven_grid_unit"
         android:fontFamily="sans-serif-medium"
         android:text="@string/error_no_restaurants"
-        android:textColor="@color/textColorPrimary"
+        android:textColor="@color/primaryTextColor"
         android:visibility="gone"
         android:textSize="@dimen/text_size_large_material" />
 

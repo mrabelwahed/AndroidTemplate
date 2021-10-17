@@ -106,7 +106,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
             viewLifecycleOwner,
             Observer {
                 textViewSelectedSort.text = "SortBy: ${getSortingString(it)}"
-                textViewSelectedSort.setTextColor(resources.getColor(R.color.accentColor))
+                textViewSelectedSort.setTextColor(resources.getColor(R.color.secondaryDarkColor))
                 adapter.changeSortType(SortingOptionsHandler.buildSortByOptionsComparator(it))
             }
         )

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#7c4dff</color>
+    <color name="primaryColor">#ffffff</color>
     <color name="primaryLightColor">#b47cff</color>
-    <color name="primaryDarkColor">#3f1dcb</color>
+    <color name="primaryDarkColor">#000000</color>
     <color name="secondaryColor">#d500f9</color>
     <color name="secondaryLightColor">#ff5bff</color>
     <color name="secondaryDarkColor">#9e00c5</color>
     <color name="primaryTextColor">#ffffff</color>
-    <color name="secondaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#b47cff</color>
 </resources>
